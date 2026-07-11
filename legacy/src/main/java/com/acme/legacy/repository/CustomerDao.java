@@ -2,12 +2,12 @@ package com.acme.legacy.repository;
 
 import com.acme.legacy.domain.Customer;
 
-import java.util.List;
+import java.util.Vector;
 
 public interface CustomerDao {
-    List<Customer> findAll();
+    Vector findAll();
 
-    Customer findById(Long id);
+    Customer findByNumber(String customerNumber);
 
     void save(Customer customer);
 }
