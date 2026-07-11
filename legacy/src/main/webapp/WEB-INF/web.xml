@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="
-             http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+<!DOCTYPE web-app PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
 
-    <display-name>Legacy Spring Struts Demo</display-name>
-
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
-    </context-param>
+    <display-name>ACME Customer Ledger</display-name>
 
     <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        <listener-class>com.acme.legacy.web.LegacyApplicationListener</listener-class>
     </listener>
 
-    <filter>
-        <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>struts2</filter-name>
-        <url-pattern>*.action</url-pattern>
-    </filter-mapping>
-
     <servlet>
-        <servlet-name>spring</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring-servlet.xml</param-value>
-        </init-param>
+        <servlet-name>menu</servlet-name>
+        <servlet-class>com.acme.legacy.web.MenuServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>spring</servlet-name>
-        <url-pattern>/mvc/*</url-pattern>
+        <servlet-name>menu</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>customers</servlet-name>
+        <servlet-class>com.acme.legacy.web.CustomerListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>customers</servlet-name>
+        <url-pattern>/customers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>customer-save</servlet-name>
+        <servlet-class>com.acme.legacy.web.CustomerSaveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>customer-save</servlet-name>
+        <url-pattern>/customer-save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>status</servlet-name>
+        <servlet-class>com.acme.legacy.web.SystemStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>status</servlet-name>
+        <url-pattern>/status</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>export</servlet-name>
+        <servlet-class>com.acme.legacy.web.CustomerExportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>export</servlet-name>
+        <url-pattern>/customers-export.xml</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
 </web-app>

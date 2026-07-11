@@ -3,33 +3,46 @@ package com.acme.legacy.service.impl;
 import com.acme.legacy.domain.Customer;
 import com.acme.legacy.repository.CustomerDao;
 import com.acme.legacy.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.Date;
+import java.util.Vector;
 
-@Service
-@Transactional
 public class CustomerServiceImpl implements CustomerService {
 
-    @Autowired
-    private CustomerDao customerDao;
+    private final CustomerDao customerDao;
+
+    public CustomerServiceImpl(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<Customer> listCustomers() {
+    public Vector listCustomers() {
         return customerDao.findAll();
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public Customer getCustomer(Long id) {
-        return customerDao.findById(id);
+    public Customer findCustomer(String customerNumber) {
+        return customerDao.findByNumber(customerNumber);
     }
 
     @Override
     public void registerCustomer(Customer customer) {
+        if (customer.getCreatedOn() == null) {
+            customer.setCreatedOn(new Date());
+        }
+        customer.setCustomerNumber(clean(customer.getCustomerNumber()).toUpperCase());
+        customer.setCompanyName(clean(customer.getCompanyName()));
+        customer.setContactName(clean(customer.getContactName()));
+        customer.setRegionCode(clean(customer.getRegionCode()).toUpperCase());
+        customer.setCreditStatus(clean(customer.getCreditStatus()).toUpperCase());
+        customer.setNotes(clean(customer.getNotes()));
         customerDao.save(customer);
+    }
+
+    private String clean(String value) {
+        if (value == null) {
+            return "";
+        }
+        return value.trim();
     }
 }

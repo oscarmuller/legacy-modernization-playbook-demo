@@ -2,12 +2,12 @@ package com.acme.legacy.service;
 
 import com.acme.legacy.domain.Customer;
 
-import java.util.List;
+import java.util.Vector;
 
 public interface CustomerService {
-    List<Customer> listCustomers();
+    Vector listCustomers();
 
-    Customer getCustomer(Long id);
+    Customer findCustomer(String customerNumber);
 
     void registerCustomer(Customer customer);
 }

@@ -1,68 +1,82 @@
 package com.acme.legacy.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Date;
 
-@Entity
-@Table(name = "T_CUSTOMER")
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "CUSTOMER_ID")
-    private Long id;
-
-    @Column(name = "FULL_NAME", nullable = false, length = 120)
-    private String fullName;
-
-    @Column(name = "EMAIL", nullable = false, length = 120)
-    private String email;
-
-    @Column(name = "ACTIVE_FLAG")
-    private boolean active;
+    private String customerNumber;
+    private String companyName;
+    private String contactName;
+    private String regionCode;
+    private String creditStatus;
+    private double outstandingBalance;
+    private Date createdOn;
+    private String notes;
 
     public Customer() {
     }
 
-    public Customer(String fullName, String email, boolean active) {
-        this.fullName = fullName;
-        this.email = email;
-        this.active = active;
+    public String getCustomerNumber() {
+        return customerNumber;
     }
 
-    public Long getId() {
-        return id;
+    public void setCustomerNumber(String customerNumber) {
+        this.customerNumber = customerNumber;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public String getContactName() {
+        return contactName;
     }
 
-    public String getEmail() {
-        return email;
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getRegionCode() {
+        return regionCode;
     }
 
-    public boolean isActive() {
-        return active;
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public String getCreditStatus() {
+        return creditStatus;
+    }
+
+    public void setCreditStatus(String creditStatus) {
+        this.creditStatus = creditStatus;
+    }
+
+    public double getOutstandingBalance() {
+        return outstandingBalance;
+    }
+
+    public void setOutstandingBalance(double outstandingBalance) {
+        this.outstandingBalance = outstandingBalance;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }
