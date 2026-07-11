@@ -1,0 +1,8 @@
+com/acme/legacy/web/CustomerAction.class
+com/acme/legacy/service/impl/CustomerServiceImpl.class
+com/acme/legacy/web/LegacyCustomerController.class
+com/acme/legacy/service/CustomerService.class
+com/acme/legacy/domain/Customer.class
+com/acme/legacy/repository/CustomerDao.class
+com/acme/legacy/infrastructure/LegacyXmlMarshaller.class
+com/acme/legacy/repository/HibernateCustomerDao.class
