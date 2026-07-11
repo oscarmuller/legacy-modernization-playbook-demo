@@ -1,8 +1,0 @@
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/service/CustomerService.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/infrastructure/LegacyXmlMarshaller.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/service/impl/CustomerServiceImpl.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/repository/CustomerDao.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/repository/HibernateCustomerDao.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/web/LegacyCustomerController.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/web/CustomerAction.java
-/Users/oscaremmanuelmuller/.copilot/repos/copilot-worktrees/legacy-modernization-playbook/oscarmuller-curly-enigma/legacy/src/main/java/com/acme/legacy/domain/Customer.java
